@@ -8,45 +8,46 @@
   </head>
   <body>
     <div class="fullPage">
-      <div class="title">
-        <h1>cAUculadora</h1>
-      </div>
+      <div class="title"></div>
       <div class="calculatorBody">
-        <div class="display"><p id="numerosDisplay"></p></div>
+        <div class="display">
+          <div class="telaDisplay" id="numerosDisplay"></div>
+        </div>
         <table class="keyPad">
           <tr>
-            <td><button class="but1" onclick="clearDisplay()">AC</button></td>
-            <td><button class="but2" onclick="clearDisplay()">CE</button></td>
+            <td><button class="but1" onclick="clearDisplay()">C</button></td>
+            <td><button class="but2" onclick="deleteDisplay()">DEL</button></td>
             <td><button class="but3" onclick="insert(':')">÷</button></td>
             <td><button class="but4" onclick="insert('x')">x</button></td>
           </tr>
           <tr>
-            <td><button class="but1" onclick="insert('7')">7</button></td>
-            <td><button class="but2" onclick="insert('8')">8</button></td>
-            <td><button class="but3" onclick="insert('9')">9</button></td>
+            <td><button class="but1" onclick="insert(7)">7</button></td>
+            <td><button class="but2" onclick="insert(8)">8</button></td>
+            <td><button class="but3" onclick="insert(9)">9</button></td>
             <td><button class="but4" onclick="insert('-')">-</button></td>
           </tr>
 
           <tr>
-            <td><button class="but1" onclick="insert('4')">4</button></td>
-            <td><button class="but2" onclick="insert('5')">5</button></td>
-            <td><button class="but3" onclick="insert('6')">6</button></td>
+            <td><button class="but1" onclick="insert(4)">4</button></td>
+            <td><button class="but2" onclick="insert(5)">5</button></td>
+            <td><button class="but3" onclick="insert(6)">6</button></td>
             <td><button class="but4" onclick="insert('+')">+</button></td>
           </tr>
 
           <tr>
-            <td><button class="but1" onclick="insert('1')">1</button></td>
-            <td><button class="but2" onclick="insert('2')">2</button></td>
-            <td><button class="but3" onclick="insert('3')">3</button></td>
+            <td><button class="but1" onclick="insert(1)">1</button></td>
+            <td><button class="but2" onclick="insert(2)">2</button></td>
+            <td><button class="but3" onclick="insert(3)">3</button></td>
             <td rowspan="2">
-              <button class="but5" onclick="insert('=')">=</button>
+              <button class="but5" onclick="equals()">=</button>
             </td>
           </tr>
 
           <tr>
-            <td><button class="but1" onclick="insert('%')">%</button></td>
-            <td><button class="but2" onclick="insert('0')">0</button></td>
-            <td><button class="but3" onclick="insert(',')">.</button></td>
+            <td colspan="2">
+              <button class="but6" onclick="insert(0)">0</button>
+            </td>
+            <td><button class="but3" onclick="insert('.')">.</button></td>
           </tr>
         </table>
       </div>

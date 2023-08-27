@@ -7,11 +7,21 @@
 
 }
 
-body {
-    background-color: rgb(172, 231, 231);
+.title {
+    width: 1200px;
+    height: 400px;
+    background-image: url(/assets/imgs/bannerHeader.png);
+    background-image: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
 }
 
+
 .calculatorBody {
+    display: inline-block;
     position: absolute;
     margin: 200px;
     padding: 20px;
@@ -19,6 +29,19 @@ body {
     background-size: cover;
     width: 289px;
     height: 430px;
+    margin:0px;
+}
+
+.historyPage {
+    display: inline-block;
+    width: 400px;
+    height: 430px;;
+    background-image: url("/assets/imgs/historyPageBG.png");
+    text-align: center;
+    margin: 0px;
+    
+    
+    
 }
 
 .display {
@@ -57,7 +80,7 @@ body {
 .but1, .but2, .but3, .but4 {
     width: 50px;
     height: 50px;
-    font-size: 25px;
+    font-size: 20px;
     cursor: pointer;
     border: none;
     background-repeat: no-repeat;
@@ -107,3 +130,4 @@ body {
     background-position: center;
     background-size: 80%;
 }
+
