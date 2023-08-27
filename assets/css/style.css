@@ -12,8 +12,98 @@ body {
 }
 
 .calculatorBody {
-    height: 100%;
+    position: absolute;
+    margin: 200px;
+    padding: 20px;
+    background-image: url("/assets/imgs/calcBody.png");
+    background-size: cover;
+    width: 289px;
+    height: 430px;
+}
+
+.display {
+    text-align: center;
+    padding-top: 20px;
+    background-image: url("/assets/imgs/display.png");
+    background-repeat: no-repeat;
+    background-size: 210px;
+    height: 100px;
     
     
 }
 
+#numerosDisplay {
+    width: 207px;
+    font-size: 25px;
+    color:#526047;
+    text-align: right;
+    padding-top: 20px;
+    padding-right: 20px;
+    
+
+}
+
+.keyPad td {
+    background: transparent;
+    border: 0;
+    padding: 3px 4px;
+}
+
+.keyPad {
+    border: 0px;
+}
+
+
+.but1, .but2, .but3, .but4 {
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    border: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px;
+    color: #a76651;
+}
+
+.but1 {
+    background-image: url("/assets/imgs/but1.png");
+}
+
+.but2 {
+    background-image: url("/assets/imgs/but2.png");
+}
+
+.but3 {
+    background-image: url("/assets/imgs/but3.png");
+}
+
+.but4 {
+    background-image: url("/assets/imgs/but4.png");
+}
+
+.but5 {
+    width: 50px;
+    height: 106px;
+    font-size: 25px;
+    cursor: pointer;
+    border: none;
+    color: #a76651;
+    background-image: url("/assets/imgs/but5.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:100%;
+}
+
+.but6 {
+    width: 106px;
+    height: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    border: none;
+    color: #a76651;
+    background-image: url("/assets/imgs/but6.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+}
