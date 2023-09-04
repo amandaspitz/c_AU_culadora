@@ -4,7 +4,10 @@
     font-weight: bold;
     margin: 0;
     padding: 0;
+}
 
+.fullPage {
+    height: 100vh;
 }
 
 .title {
@@ -12,36 +15,36 @@
     height: 400px;
     background-image: url(/assets/imgs/bannerHeader.png);
     background-image: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
-    
 }
 
+.calculatorHistoryWrapper {
+    display: flex;
+    justify-content: center;
+}
 
 .calculatorBody {
-    display: inline-block;
-    position: absolute;
-    margin: 200px;
-    padding: 20px;
+    margin-right: 100px; /* Espaço entre a calculadora e o histórico */
     background-image: url("/assets/imgs/calcBody.png");
     background-size: cover;
     width: 289px;
     height: 430px;
-    margin:0px;
+    padding: 20px 24px;
 }
 
 .historyPage {
-    display: inline-block;
-    width: 400px;
-    height: 430px;;
+    padding: 94px 20px;
     background-image: url("/assets/imgs/historyPageBG.png");
+    width: 400px;
+    height: 430px;
     text-align: center;
-    margin: 0px;
-    
-    
-    
+    color: #5b4d42;
+}
+
+.historyPage div {
+    transform: rotate(3.5deg);
+    margin-bottom: 8.8px;
+    cursor: pointer;
 }
 
 .display {
@@ -51,7 +54,7 @@
     background-repeat: no-repeat;
     background-size: 210px;
     height: 100px;
-    
+    background-size: 233px;
     
 }
 
@@ -87,6 +90,7 @@
     background-position: center;
     background-size: 50px;
     color: #a76651;
+    background-color: transparent;
 }
 
 .but1 {
@@ -116,6 +120,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size:100%;
+    background-color: transparent;
 }
 
 .but6 {
@@ -129,5 +134,10 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 80%;
+    background-color: transparent;
+}
+
+button:hover {
+    filter: saturate(300%);
 }
 

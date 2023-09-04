@@ -1,6 +1,8 @@
 let currentDisplay = "";
 const history = [];
 
+
+
 function insert(input) {
   if (currentDisplay.length >= 20) {
     return;
@@ -8,7 +10,8 @@ function insert(input) {
 
   currentDisplay += input;
   document.getElementById("numerosDisplay").innerHTML = currentDisplay;
-}
+  
+  }
 
 function clearDisplay() {
   currentDisplay = "";
@@ -20,8 +23,14 @@ function deleteDisplay() {
   document.getElementById("numerosDisplay").innerHTML = currentDisplay;
 }
 
-function addToHistory(expression, result) {
-  history.push({ expression, result });
+function addToHistory(expression, date) {
+  let idItem = 1;
+  for (let item = 0; item < history.length; item++) {
+    idItem ++; 
+  }
+
+  history.push({ expression, date, idItem});
+  
 
   if (history.length > 4) {
     history.shift();
@@ -37,17 +46,38 @@ function displayHistory() {
   for (let i = history.length - 1; i >= 0; i--) {
     const entry = history[i];
     const operationDiv = document.createElement("div");
-    operationDiv.textContent = `${entry.expression} = ${entry.result}`;
+    operationDiv.id=`${entry.idItem}`;
+    operationDiv.addEventListener('click', () => {
+      insert(`${entry.expression.split("=")[0]}`);
+    })
+    operationDiv.textContent = `${entry.expression} ( ${entry.date} )`;
     historyElement.appendChild(operationDiv);
   }
 }
 
+function formatDate(date) {
+  if (!(date instanceof Date) || isNaN(date)) {
+    return 'Invalid Date';
+  }
+
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0'); 
+  const year = date.getFullYear();
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  const seconds = String(date.getSeconds()).padStart(2, '0');
+
+  const formattedDate = `${day}/${month}/${year}, ${hours}:${minutes}:${seconds}`;
+  return formattedDate;
+}
+
 function getResult() {
+  const expression = document.getElementById("numerosDisplay").innerHTML.toString();
   const result = evaluateExpression(currentDisplay);
   if (!isNaN(result)) {
     document.getElementById("numerosDisplay").innerHTML = result;
     currentDisplay = result.toString();
-    addToHistory(currentDisplay, result);
+    addToHistory(expression + "=" + result.toString(), formatDate(new Date()));
   } else {
     document.getElementById("numerosDisplay").innerHTML = "Erro";
   }
